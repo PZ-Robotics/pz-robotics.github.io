@@ -1,17 +1,45 @@
+/* Reset & full screen */
 html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    overflow-x: hidden;  /* Prevent horizontal scrolling only */
-    overflow-y: auto;    /* Allow vertical scrolling */
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
 }
 
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    width: 100vw;
-    background: url('../media/background.gif') no-repeat center center fixed;
-    background-size: cover;
+/* Wrapper for background and logo */
+.background-wrapper {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  background-color: black;
+  overflow: hidden;
+}
+
+/* The GIF fills the screen, keeps aspect ratio, and shows entirely */
+.background-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-height: 100%;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  z-index: -1;
+}
+
+/* Centered logo */
+.overlay {
+  position: relative;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  max-width: 90%;
+  height: auto;
 }
